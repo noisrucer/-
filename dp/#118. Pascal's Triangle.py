@@ -18,9 +18,6 @@ class Solution:
             curr = [1] + list(map(lambda x, y: x + y, prev[:i - 1], prev[1:])) + [1]
             pascals.append(curr)
         return pascals
-        # 1 4 6 4 1
-        #   1 4 6 4 1 
-        # 1 5 10 10 5 1
         
         
 '''
