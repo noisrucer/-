@@ -1,7 +1,7 @@
 '''
 Method 1 - lambda function
 TC: O(n^2)
-Extra SC: O(n) for pev, curr
+Extra SC: O(n) for prev, curr
 
 [Description]
 1 4 6 4 1
