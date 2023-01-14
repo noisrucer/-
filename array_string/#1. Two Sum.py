@@ -7,3 +7,5 @@ class Solution:
                 num2 = nums.index(num1)
                 if i != num2:
                     return [i, num2]
+                
+                
