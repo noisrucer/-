@@ -2,6 +2,13 @@
 Method1
 TC: O(n)
 SC: O(1)
+
+[Description]
+freq(maj el) >= floor(n / 2) + 1
+freq(rest of all) <= n - floor(n / 2) - 1
+freq(maj el) - freq(rest of all) = -n + 2 * floor(n / 2) + 2
+if n is even -> -n + n + 2 = 2
+if n is odd -> -n + (n - 1) + 2 = 1
 '''
 
 class Solution:
