@@ -1,24 +1,25 @@
-'''
-1. 일반화
-s와 t 두 개의 문자열이 주어졌을 때 그것이 동형인지 여부를 밥ㄴ환해라
+class Solution:
+    def isIsomorphic(self, s: str, t: str) -> bool:
+        s_hash_table = dict()
+        t_hash_table = dict()
 
-- 조건
-    - 해당 문자가 두 번이상 등장하는가?
-        - 해당 문자가 같은 인덱스인가?
+        if len(s) != len(t):
+            return False
+        
+        for i in range(len(s)):
+            if s[i] in s_hash_table:
+                    if s_hash_table[s[i]] != t[i]:
+                        return False
+            else:
+                s_hash_table[s[i]] = t[i]
+                
+            if t[i] in t_hash_table:
+                if t_hash_table[t[i]] != s[i]:
+                    return False
+            else:
+                t_hash_table[t[i]] = s[i]
 
-'''
+        return True
+    
 
-s = "aaeaa"
-t = "uuxyy"
 
-hash_table = dict()
-
-for i in range(len(s)):
-    if s[i] in hash_table:
-            if hash_table[s[i]] == t[i]:
-                print(True)
-    else:
-        hash_table[s[i]] = t[i]
-
-print(False)
-print(hash_table)

@@ -1,16 +1,18 @@
-pattern = "abba"
-s = "dog dog dog dog"
+class Solution:
+    def wordPattern(self, pattern: str, s: str) -> bool:
+        mapping = dict()
 
-s = s.split()
+        s = s.split()
 
-hash_table = dict()
-
-for i in range(len(pattern)):
-    if pattern[i] in hash_table:
-        if hash_table[pattern[i]] != s[i]:
-            print(False)
-    else:
-        if s[i] != hash_table.values():
-            hash_table[pattern[i]] = s[i]
-
-print(hash_table)
+        if len(pattern) != len(s):
+            return False
+            
+        for i in range(len(pattern)):
+            if pattern[i] not in mapping.keys():
+                if s[i] in mapping.values():
+                    return False
+                mapping[pattern[i]] = s[i]
+            elif mapping[pattern[i]] != s[i]:
+                return False
+        
+        return True
